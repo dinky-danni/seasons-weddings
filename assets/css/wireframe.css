@@ -1,0 +1,1150 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Raleway:wght@200;300;400;500;600&display=swap");
+
+:root {
+  --white: #ffffff;
+  --page: #faf8f5;
+  --surface: #ffffff;
+  --surface-soft: #f4efea;
+  --surface-muted: #e8e2d9;
+  --cream: #f4efea;
+  --warm-grey: #e8e2d9;
+  --ink: #1c1814;
+  --charcoal: #2e2820;
+  --text: #3d3428;
+  --muted: #7a6e62;
+  --pale-muted: #a89e92;
+  --line: #ddd7ce;
+  --gold: #9a7c3f;
+  --gold-mid: #b8963e;
+  --gold-light: #c9a84c;
+  --focus: #9a7c3f;
+  --max: 1400px;
+  --radius: 0;
+  --space: clamp(72px, 8vw, 120px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  color: var(--text);
+  background: var(--white);
+  font-size: 0.94rem;
+  line-height: 1.7;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  transform: translateY(-160%);
+  background: var(--ink);
+  color: #fff;
+  padding: 10px 14px;
+  z-index: 20;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  border-bottom: 1px solid rgba(221, 215, 206, 0.62);
+  background: rgba(255, 255, 255, 0.74);
+  backdrop-filter: blur(18px);
+}
+
+.header-inner,
+.section-inner,
+.footer-inner {
+  width: min(100% - 32px, var(--max));
+  margin: 0 auto;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  min-height: 88px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.brand img {
+  width: auto;
+  height: 58px;
+  display: block;
+}
+
+.brand strong {
+  font-family: "Playfair Display", serif;
+  font-size: 1.18rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.brand span {
+  color: var(--pale-muted);
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.footer-logo-img {
+  width: 150px;
+  height: auto;
+  display: block;
+  opacity: 0.82;
+}
+
+.nav-toggle {
+  display: none;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  min-width: 44px;
+  min-height: 44px;
+  font: inherit;
+}
+
+.primary-nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.primary-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 0;
+  border-radius: 0;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.64rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border-bottom: 1px solid transparent;
+}
+
+.primary-nav a:hover,
+.primary-nav a:focus,
+.primary-nav a[aria-current="page"] {
+  background: transparent;
+  color: var(--gold);
+  border-bottom-color: var(--gold-mid);
+}
+
+.wire-hero,
+.wire-section {
+  border-bottom: 1px solid var(--line);
+}
+
+.wire-hero {
+  padding: 88px 0 0;
+  background: var(--off-white, #faf8f5);
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+}
+
+.wire-section {
+  padding: var(--space) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.wire-section:nth-of-type(even) {
+  background: var(--page);
+}
+
+.hero-grid,
+.split-grid,
+.three-grid,
+.two-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.hero-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: stretch;
+  gap: 0;
+}
+
+.wire-hero .section-inner {
+  width: 100%;
+  max-width: none;
+}
+
+.wire-hero .stack {
+  justify-content: center;
+  min-height: calc(100vh - 88px);
+  padding: clamp(56px, 8vw, 120px) clamp(28px, 7vw, 88px);
+}
+
+.split-grid {
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+}
+
+.three-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.two-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.stack {
+  display: grid;
+  gap: 16px;
+}
+
+.section-heading {
+  max-width: 780px;
+  margin-bottom: 54px;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 20px;
+  color: var(--gold);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: var(--gold-mid);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.12;
+  color: var(--ink);
+}
+
+h1 {
+  max-width: 900px;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(3rem, 5.8vw, 6rem);
+  font-weight: 400;
+}
+
+h1 em,
+h2 em {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.hero-title-gold {
+  color: var(--gold);
+}
+
+h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.15rem, 3.6vw, 3.7rem);
+  font-weight: 400;
+}
+
+h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+
+p {
+  margin: 0;
+}
+
+.lede {
+  max-width: 740px;
+  color: var(--muted);
+  font-size: clamp(0.92rem, 1.25vw, 1rem);
+  line-height: 1.95;
+}
+
+.wire-box,
+.wire-card,
+.wire-panel,
+.form-shell {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.wire-box {
+  min-height: 420px;
+  display: grid;
+  align-items: end;
+  justify-items: start;
+  padding: 20px;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: left;
+  background:
+    linear-gradient(to top, rgba(28, 24, 20, 0.72), rgba(28, 24, 20, 0.08)),
+    url("/assets/img/wedding-ceremony-1.webp") center/cover;
+  overflow: hidden;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+}
+
+.wire-box,
+.placeholder-thumb {
+  color: transparent;
+  font-size: 0;
+}
+
+.wire-card,
+.wire-panel,
+.form-shell {
+  padding: clamp(28px, 4vw, 52px);
+}
+
+.wire-card {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+  min-height: 230px;
+  transition: background 0.35s, box-shadow 0.35s;
+  position: relative;
+  overflow: hidden;
+}
+
+.wire-card:hover {
+  background: var(--page);
+  box-shadow: 0 4px 40px rgba(28, 24, 20, 0.06);
+}
+
+.wire-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold-mid), transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s;
+}
+
+.wire-card:hover::before {
+  transform: scaleX(1);
+}
+
+.ticker {
+  background: var(--ink);
+  padding: 16px 0;
+  overflow: hidden;
+}
+
+.ticker-inner {
+  display: flex;
+  gap: 56px;
+  width: max-content;
+  white-space: nowrap;
+  animation: marquee 38s linear infinite;
+}
+
+.ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.ticker-dot {
+  width: 3px;
+  height: 3px;
+  background: var(--gold-mid);
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+
+.gallery-section {
+  padding: 0;
+  background: var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 380px;
+  gap: 3px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.wire-card p,
+.wire-panel p,
+.list-check li {
+  color: var(--muted);
+}
+
+.route-card {
+  min-height: 330px;
+}
+
+.included-section {
+  background: var(--white);
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.included-section::before {
+  display: none;
+}
+
+.included-heading {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: end;
+  margin-bottom: 72px;
+}
+
+.included-heading h2 {
+  max-width: 700px;
+  margin-bottom: 0;
+  font-size: clamp(2.2rem, 3.5vw, 3.4rem);
+  line-height: 1.15;
+}
+
+.included-heading .lede {
+  max-width: 680px;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  line-height: 1.9;
+}
+
+.included-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--line);
+}
+
+.included-item {
+  min-height: 0;
+  padding: 52px 44px;
+  background: var(--page);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.35s;
+}
+
+.included-item:hover {
+  background: var(--surface-soft);
+}
+
+.included-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold-mid), transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s;
+}
+
+.included-item:hover::before {
+  transform: scaleX(1);
+}
+
+.included-item span {
+  display: block;
+  margin-bottom: 20px;
+  color: #e6dfd5;
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.included-item h3 {
+  margin-bottom: 14px;
+  color: var(--ink);
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.included-item p {
+  max-width: 420px;
+  margin-bottom: 20px;
+  color: var(--muted);
+  font-size: 0.83rem;
+  font-weight: 300;
+  line-height: 1.85;
+}
+
+.included-item a {
+  display: inline-block;
+  padding-bottom: 2px;
+  color: var(--gold);
+  border-bottom: 1px solid rgba(154, 124, 63, 0.2);
+  font-size: 0.58rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  line-height: 1.6;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.included-item a:hover {
+  color: var(--ink);
+  border-bottom-color: var(--gold);
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 16px 28px;
+  border: 1px solid var(--gold);
+  border-radius: 0;
+  background: var(--gold);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.23em;
+  text-transform: uppercase;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+
+.button:hover {
+  background: var(--gold-light);
+  transform: translateY(-1px);
+}
+
+.button.secondary {
+  min-height: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--gold);
+  border: 0;
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+  line-height: 1.2;
+}
+
+.button.secondary:hover {
+  background: transparent;
+  color: var(--ink);
+  text-decoration-color: var(--gold);
+}
+
+.button:focus,
+.nav-toggle:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.list-check {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list-check li {
+  position: relative;
+  padding-left: 30px;
+}
+
+.list-check li::before,
+.list-check li::after {
+  content: "";
+  position: absolute;
+  top: 0.68em;
+  width: 8px;
+  height: 8px;
+  border: 2px solid var(--gold-mid);
+  border-radius: 50%;
+}
+
+.list-check li::before {
+  left: 0;
+}
+
+.list-check li::after {
+  left: 4px;
+  top: 0.48em;
+  border-color: rgba(184, 150, 62, 0.78);
+}
+
+.placeholder-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.placeholder-thumb {
+  min-height: 140px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(to top, rgba(28, 24, 20, 0.62), rgba(28, 24, 20, 0.05)),
+    url("/assets/img/edinburgh-weddings-venue-768x512.webp") center/cover;
+  display: grid;
+  place-items: end start;
+  text-align: left;
+  padding: 12px;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.wire-section.save-date-band {
+  background: #1c1814;
+  color: #fff;
+  padding-top: 56px;
+  padding-bottom: 56px;
+  position: relative;
+  overflow: hidden;
+}
+
+.save-date-band::before {
+  display: none;
+}
+
+.save-date-band .eyebrow,
+.save-date-band .lede {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.save-date-band h2,
+.save-date-band h3 {
+  color: #fff;
+}
+
+.save-date-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.35fr);
+  gap: clamp(18px, 4vw, 42px);
+  align-items: center;
+}
+
+.save-date-form {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  backdrop-filter: none;
+}
+
+.save-date-form input,
+.save-date-form select,
+.save-date-form textarea {
+  min-height: 46px;
+  padding: 10px 14px;
+}
+
+.save-date-form .button {
+  min-height: 46px;
+  padding: 12px 22px;
+  border-color: #fff;
+  background: #fff;
+  color: var(--ink);
+}
+
+.compact-form-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  align-items: end;
+}
+
+.wire-section.booking-form-section {
+  background: #1c1814;
+  color: #fff;
+}
+
+.booking-form-section::before {
+  display: none;
+}
+
+.booking-form-section .eyebrow,
+.booking-form-section .lede {
+  color: rgba(255, 255, 255, 0.64);
+}
+
+.booking-form-section h2 {
+  color: #fff;
+}
+
+.booking-form-section .form-shell {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.booking-form-section input,
+.booking-form-section select,
+.booking-form-section textarea {
+  min-height: 46px;
+  padding: 10px 14px;
+}
+
+.booking-form-section .button {
+  min-height: 46px;
+  padding: 12px 22px;
+}
+
+.booking-form-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(18px, 4vw, 42px);
+  align-items: start;
+}
+
+.field {
+  display: grid;
+  gap: 7px;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+label {
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  min-height: 54px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.85);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 300;
+  outline: none;
+  transition: border-color 0.3s, background 0.3s, color 0.3s;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--gold-mid);
+}
+
+select {
+  cursor: pointer;
+}
+
+select option {
+  background: var(--ink);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.site-footer {
+  padding: 60px 0 34px;
+  background: #141009;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  color: #fff;
+}
+
+.footer-inner {
+  display: grid;
+  gap: 28px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr repeat(3, minmax(0, 1fr));
+  gap: 42px;
+}
+
+.footer-column {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+}
+
+.footer-column h2,
+.footer-column h3 {
+  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.footer-column p,
+.footer-small {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.82rem;
+}
+
+.footer-links {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.policy-content ul:not(.list-check) {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.policy-content ul:not(.list-check) li {
+  position: relative;
+  padding-left: 28px;
+}
+
+.policy-content ul:not(.list-check) li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 10px;
+  height: 10px;
+  border: 1.5px solid var(--gold-mid);
+  border-radius: 50%;
+}
+
+.footer-inner a {
+  color: #fff;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.3s;
+}
+
+.footer-inner a:hover {
+  color: var(--gold-light);
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 14px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.policy-content {
+  max-width: 880px;
+}
+
+.policy-content h2 {
+  margin-top: 34px;
+  font-size: clamp(1.35rem, 2.4vw, 2rem);
+}
+
+.policy-content h3 {
+  margin-top: 24px;
+}
+
+.policy-content p,
+.policy-content li {
+  color: var(--muted);
+}
+
+.wire-hero .wire-box {
+  position: relative;
+  min-height: calc(100vh - 88px);
+  border: 0;
+}
+
+.wire-hero .wire-box::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(56vw, 560px);
+  height: min(56vw, 560px);
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.wire-hero .wire-box::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(38vw, 380px);
+  height: min(38vw, 380px);
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.wire-hero .wire-box {
+  padding: clamp(24px, 4vw, 54px);
+}
+
+.wire-hero .wire-box {
+  align-items: end;
+}
+
+.wire-section .wire-box:nth-child(1) {
+  background-image:
+    linear-gradient(to top, rgba(28, 24, 20, 0.7), rgba(28, 24, 20, 0.08)),
+    url("/assets/img/CustomHouse482of792-1-scaled.webp");
+}
+
+.split-grid .wire-box + .stack,
+.split-grid .stack + .wire-box {
+  align-self: center;
+}
+
+.gallery .placeholder-thumb:nth-child(1),
+.placeholder-strip .placeholder-thumb:nth-child(1) {
+  background-image: linear-gradient(to top, rgba(28, 24, 20, 0.62), rgba(28, 24, 20, 0.05)), url("/assets/img/wedding-ceremony-1.webp");
+}
+
+.placeholder-strip .placeholder-thumb:nth-child(2) {
+  background-image: linear-gradient(to top, rgba(28, 24, 20, 0.62), rgba(28, 24, 20, 0.05)), url("/assets/img/weddings.webp");
+}
+
+.placeholder-strip .placeholder-thumb:nth-child(3) {
+  background-image: linear-gradient(to top, rgba(28, 24, 20, 0.62), rgba(28, 24, 20, 0.05)), url("/assets/img/Gemma-_26-Dylan-22-1-scaled.webp");
+}
+
+.placeholder-strip .placeholder-thumb:nth-child(4) {
+  background-image: linear-gradient(to top, rgba(28, 24, 20, 0.62), rgba(28, 24, 20, 0.05)), url("/assets/img/wedding-venue-leith-768x512.webp");
+}
+
+@media (max-width: 980px) {
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .primary-nav {
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    top: 88px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+
+  .primary-nav.is-open {
+    display: flex;
+  }
+
+  .primary-nav a {
+    width: 100%;
+  }
+
+  .hero-grid,
+  .split-grid,
+  .three-grid,
+  .two-grid,
+  .save-date-grid,
+  .compact-form-grid,
+  .booking-form-layout,
+  .included-heading,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .included-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: unset;
+  }
+
+  .gallery-item {
+    height: 200px;
+  }
+
+  .wire-hero {
+    min-height: auto;
+  }
+
+  .included-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .wire-hero .stack {
+    min-height: auto;
+    padding-top: 72px;
+    padding-bottom: 52px;
+  }
+
+  .wire-hero .wire-box {
+    min-height: 440px;
+  }
+
+  .placeholder-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .header-inner,
+  .section-inner,
+  .footer-inner {
+    width: min(100% - 24px, var(--max));
+  }
+
+  .form-grid,
+  .included-grid,
+  .placeholder-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .included-item {
+    min-height: auto;
+    padding: 34px 28px;
+  }
+
+  .wire-box {
+    min-height: 280px;
+  }
+
+  .included-section {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+
+  h1 {
+    font-size: clamp(2.35rem, 12.5vw, 3.15rem);
+    line-height: 1.06;
+  }
+
+  .cta-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .wire-hero .wire-box {
+    min-height: 320px;
+  }
+}

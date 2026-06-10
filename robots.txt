@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+# Add the production sitemap URL once the final wedding domain is confirmed.
