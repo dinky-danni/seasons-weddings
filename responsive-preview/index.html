@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Responsive Preview | Seasons Weddings</title>
+  <style>
+    :root {
+      --bg: #101923;
+      --panel: #ffffff;
+      --ink: #172a3d;
+      --muted: #5d6d7c;
+      --line: #d9e3ec;
+      --blue: #164f86;
+      --preview-height: 768px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+    }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(16, 25, 35, 0.96);
+      color: #fff;
+    }
+
+    .toolbar h1 {
+      margin: 0 14px 0 0;
+      font-size: 16px;
+      letter-spacing: 0.04em;
+    }
+
+    .toolbar label {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    select,
+    button {
+      min-height: 38px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 6px;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      padding: 8px 12px;
+    }
+
+    button {
+      cursor: pointer;
+      background: #d7b56d;
+      border-color: #d7b56d;
+      color: #101923;
+      font-weight: 700;
+    }
+
+    .preview-shell {
+      width: max-content;
+      max-width: 100%;
+      padding: 24px 18px 40px;
+      overflow-x: auto;
+    }
+
+    .frames {
+      display: grid;
+      gap: 28px;
+      justify-items: start;
+    }
+
+    .frame-card {
+      width: calc(var(--frame-width) + 2px);
+      max-width: none;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.28);
+    }
+
+    .frame-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--line);
+      background: #f7fafc;
+      color: var(--ink);
+    }
+
+    .frame-head strong {
+      font-size: 13px;
+    }
+
+    .frame-head span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .stage {
+      width: 100%;
+      height: var(--preview-height);
+      overflow: auto;
+      background: #172434;
+    }
+
+    .viewport {
+      width: 100%;
+      min-height: var(--preview-height);
+      background: #fff;
+    }
+
+    iframe {
+      display: block;
+      width: 100%;
+      height: var(--preview-height);
+      border: 0;
+      background: #fff;
+    }
+
+    .frame-card.mobile-sm { --frame-width: 320px; }
+    .frame-card.mobile-lg { --frame-width: 390px; }
+    .frame-card.tablet { --frame-width: 768px; }
+    .frame-card.laptop { --frame-width: 1024px; }
+    .frame-card.desktop { --frame-width: 1440px; }
+
+    @media (max-width: 980px) {
+      .frame-card {
+        max-width: none;
+      }
+
+      .frame-card.tablet,
+      .frame-card.laptop,
+      .frame-card.desktop {
+        overflow-x: auto;
+      }
+
+      .frame-card.tablet .stage,
+      .frame-card.tablet .viewport,
+      .frame-card.laptop .stage,
+      .frame-card.laptop .viewport,
+      .frame-card.desktop .stage,
+      .frame-card.desktop .viewport {
+        width: var(--frame-width);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="toolbar">
+    <h1>Responsive Preview</h1>
+    <label for="pageSelect">Page</label>
+    <select id="pageSelect">
+      <option value="/">Home</option>
+      <option value="/catering-only/">Catering</option>
+      <option value="/full-wedding-package/">Wedding Packages</option>
+      <option value="/venue/">Venue</option>
+      <option value="/menus/">Menus</option>
+      <option value="/tastings/">Tastings</option>
+      <option value="/planning-support/">Planning</option>
+      <option value="/gallery/">Gallery</option>
+      <option value="/contact/">Contact</option>
+      <option value="/privacy-policy/">Privacy Policy</option>
+      <option value="/cookie-policy/">Cookie Policy</option>
+      <option value="/terms-and-conditions/">Terms &amp; Conditions</option>
+    </select>
+    <button type="button" id="refreshFrames">Refresh</button>
+  </header>
+
+  <main class="preview-shell">
+    <div class="frames">
+      <section class="frame-card mobile-sm">
+        <div class="frame-head"><strong>Small Mobile</strong><span>320px</span></div>
+        <div class="stage"><div class="viewport"><iframe title="Small mobile preview"></iframe></div></div>
+      </section>
+
+      <section class="frame-card mobile-lg">
+        <div class="frame-head"><strong>Large Mobile</strong><span>390px</span></div>
+        <div class="stage"><div class="viewport"><iframe title="Large mobile preview"></iframe></div></div>
+      </section>
+
+      <section class="frame-card tablet">
+        <div class="frame-head"><strong>Tablet</strong><span>768px</span></div>
+        <div class="stage"><div class="viewport"><iframe title="Tablet preview"></iframe></div></div>
+      </section>
+
+      <section class="frame-card laptop">
+        <div class="frame-head"><strong>Laptop</strong><span>1024px</span></div>
+        <div class="stage"><div class="viewport"><iframe title="Laptop preview"></iframe></div></div>
+      </section>
+
+      <section class="frame-card desktop">
+        <div class="frame-head"><strong>Desktop</strong><span>1440px</span></div>
+        <div class="stage"><div class="viewport"><iframe title="Desktop preview"></iframe></div></div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const select = document.querySelector("#pageSelect");
+    const refresh = document.querySelector("#refreshFrames");
+    const frames = [...document.querySelectorAll("iframe")];
+
+    function updateFrames() {
+      const path = select.value;
+      const cacheKey = Date.now();
+      frames.forEach((frame) => {
+        frame.src = `${path}?preview=${cacheKey}`;
+      });
+    }
+
+    select.addEventListener("change", updateFrames);
+    refresh.addEventListener("click", updateFrames);
+    updateFrames();
+  </script>
+</body>
+</html>

@@ -58,3 +58,15 @@ Research and benchmark notes from Scottish and UK wedding venue sites:
 - Food copy should feel sensory and celebratory while staying factual: seasonal food, canapes, shared feasts, grazing tables, evening bites and drinks.
 - CTAs should feel inviting rather than transactional: check your date, start planning, arrange a viewing, talk to us about your day.
 - Avoid over-promising. Keep all concrete claims tied to confirmed facts from the existing Seasons sites.
+
+## Current Build Direction - June 2026
+
+- The Catering page is the current internal-page benchmark for tone, imagery and section styling.
+- Use warm, wedding-led phrasing that feels celebratory, but keep practical claims tied to confirmed Seasons facts.
+- Prefer short, elegant heading emphasis using `<em>` for the words that should appear gold and italic.
+- Hero CTAs now use dark grey primary buttons site-wide to reduce overuse of gold.
+- Hero images should use the clean inset border and flat 22% black overlay, without decorative SVG overlays.
+- Tickers should feel brand-led rather than operational. Avoid wording such as "dietary requirements" or "service team" in ticker copy.
+- Numbered blocks should be used for grouped service details, routes and planning steps.
+- Do not overuse tickers. They are currently appropriate for Catering, Venue, Full Wedding Package and Menus.
+- Keep the homepage bespoke unless the user specifically asks for homepage-wide changes.
