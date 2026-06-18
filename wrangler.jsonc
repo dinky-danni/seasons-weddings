@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "seasons-weddings",
+  "compatibility_date": "2026-05-25",
+  "pages_build_output_dir": "public",
+  "vars": {
+    "ENQUIRY_SITE_NAME": "Seasons Weddings",
+    "ENQUIRY_NOTIFICATION_TO": "hub@encapsulate.group",
+    "BREVO_FROM_EMAIL": "no-reply@seasonquayside.co.uk",
+    "ENQUIRY_REPLY_TO_MODE": "submitter",
+    "TURNSTILE_SITE_KEY": "replace-with-public-site-key"
+  }
+}

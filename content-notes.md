@@ -75,3 +75,13 @@ Research and benchmark notes from Scottish and UK wedding venue sites:
 
 - Menus page: replace temporary menu-card background imagery with final supplied menu/category images.
 - Catering page: replace temporary venue recommendation card imagery with final supplied venue images.
+
+## Responsive QC Status
+
+- Home: QC done.
+- Catering: QC done.
+- Wedding Packages: QC done.
+- Venue: QC done.
+- Menus: QC done.
+- Tastings: QC done.
+- Planning: QC done.

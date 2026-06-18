@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "dev": "wrangler pages dev public",
+    "check": "node scripts/check-site.mjs",
+    "build": "npm run check"
+  },
+  "devDependencies": {
+    "wrangler": "^4.20.0"
+  }
+}
