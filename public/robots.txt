@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
 
-# Add the production sitemap URL once the final wedding domain is confirmed.
+Disallow: /api/
+Disallow: /responsive-preview/
+Disallow: /thank-you/
+Disallow: /404.html
+
+Sitemap: https://enquiries.seasonquayside.co.uk/sitemap.xml

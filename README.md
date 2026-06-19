@@ -11,7 +11,7 @@ This site is the wedding-specific branch of the Seasons restructure. It covers t
 
 ## Structure
 
-Each public page uses a folder-based URL with an `index.html` file.
+Cloudflare Pages serves the site from `public/`. Each public page uses a folder-based URL with an `index.html` file.
 
 Current pages:
 
@@ -32,13 +32,26 @@ Current pages:
 
 Shared assets:
 
-- `assets/css/wireframe.css`
-- `assets/js/components.js`
-- `assets/js/site.js`
-- `assets/img/`
-- `assets/img/optimized/`
-- `assets/docs/`
-- `responsive-preview/`
+- `public/assets/css/wireframe.css`
+- `public/assets/js/components.js`
+- `public/assets/js/site.js`
+- `public/assets/img/`
+- `public/assets/img/optimized/`
+- `public/assets/docs/`
+- `public/responsive-preview/`
+
+Cloudflare/go-live files:
+
+- `functions/api/enquiry.js`
+- `functions/api/form-config.js`
+- `public/_headers`
+- `public/_redirects`
+- `public/robots.txt`
+- `public/sitemap.xml`
+- `public/404.html`
+- `public/thank-you/`
+- `wrangler.jsonc`
+- `.dev.vars.example`
 
 ## Shared Components
 
@@ -108,11 +121,64 @@ The current preview is running at:
 http://127.0.0.1:8031/
 ```
 
-If restarting manually from this folder, a simple static server is enough.
+For the plain static preview, serve the `public/` folder.
 
 ```bash
+cd public
 python3 -m http.server 8031
 ```
+
+For Cloudflare Pages Functions and form testing, use Wrangler:
+
+```bash
+npm install
+npm run dev
+```
+
+## Cloudflare Pages
+
+Recommended settings:
+
+- Framework preset: None.
+- Build command: `npm run build`.
+- Build output directory: `public`.
+- Production branch: `main`.
+- Preview branch: `staging`.
+
+Required safe public/non-secret values:
+
+- `TURNSTILE_SITE_KEY`
+- `BREVO_FROM_EMAIL`
+- `ENQUIRY_NOTIFICATION_TO`
+- `ENQUIRY_SITE_NAME`
+- `ENQUIRY_REPLY_TO_MODE`
+
+Required secrets:
+
+- `BREVO_API_KEY`
+- `TURNSTILE_SECRET_KEY`
+
+Do not commit real secrets. Use `.dev.vars.example` for local placeholders only.
+
+## Forms And Cookies
+
+- Forms submit to `/api/enquiry`.
+- `/api/form-config` exposes only safe public form settings.
+- Brevo email delivery happens server-side only.
+- Cloudflare Turnstile is validated server-side.
+- Honeypot spam protection is included.
+- Successful submissions redirect to `/thank-you/`.
+- Optional embeds such as Google Maps are gated behind the cookie settings panel.
+
+## Checks
+
+Run:
+
+```bash
+npm run check
+```
+
+Additional go-live checks and deployment notes are in `GO-LIVE-HANDOVER.md`.
 
 ## Git
 
