@@ -271,14 +271,19 @@ img {
 }
 
 .primary-nav .nav-brochure {
-  color: var(--gold);
-  font-weight: 800;
+  min-height: 38px;
+  padding: 10px 16px;
+  border: 1px solid rgba(154, 124, 63, 0.34);
+  background: #f6f4ee;
+  color: var(--ink);
+  font-weight: 700;
 }
 
 .primary-nav .nav-brochure:hover,
 .primary-nav .nav-brochure:focus {
-  color: var(--ink);
-  border-bottom-color: var(--gold);
+  border-color: rgba(154, 124, 63, 0.72);
+  background: #fff;
+  color: var(--gold);
 }
 
 .wire-hero,
@@ -580,6 +585,484 @@ p {
   transform: scaleX(1);
 }
 
+.wedding-editorial-section,
+.wedding-feature-section,
+.wedding-flow-section {
+  background: var(--white);
+}
+
+.wedding-editorial-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1.22fr);
+  gap: clamp(34px, 6vw, 94px);
+  align-items: center;
+}
+
+.wedding-editorial-copy {
+  align-content: center;
+}
+
+.wedding-editorial-rows {
+  display: grid;
+  border-block: 1px solid var(--line);
+}
+
+.wedding-editorial-row {
+  display: grid;
+  grid-template-columns: minmax(68px, 0.22fr) minmax(0, 1fr);
+  gap: clamp(18px, 3vw, 42px);
+  align-items: center;
+  padding: clamp(24px, 3vw, 40px) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.wedding-editorial-row:last-child {
+  border-bottom: 0;
+}
+
+.wedding-editorial-row span,
+.wedding-flow-card span,
+.wedding-stat-card strong {
+  color: #e6dfd5;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.wedding-editorial-row h3 {
+  margin-bottom: 10px;
+}
+
+.wedding-editorial-row p {
+  max-width: 620px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.85;
+}
+
+.wire-section.wedding-practical-section {
+  background:
+    linear-gradient(180deg, #211b16 0%, var(--ink) 52%, #17130f 100%);
+  color: var(--cream);
+}
+
+.wedding-practical-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+  gap: clamp(42px, 7vw, 112px);
+  align-items: center;
+}
+
+.wedding-practical-rows {
+  display: grid;
+  border-block: 1px solid rgba(232, 226, 217, 0.14);
+}
+
+.wedding-practical-row {
+  display: grid;
+  grid-template-columns: minmax(96px, 0.2fr) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 60px);
+  align-items: center;
+  padding: clamp(28px, 4vw, 54px) 0;
+  border-bottom: 1px solid rgba(232, 226, 217, 0.12);
+}
+
+.wedding-practical-row:last-child {
+  border-bottom: 0;
+}
+
+.wedding-practical-row span {
+  color: rgba(244, 239, 234, 0.82);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(3.3rem, 6vw, 6.1rem);
+  font-weight: 400;
+  line-height: 0.9;
+}
+
+.wedding-practical-row h3,
+.wedding-practical-copy h2 {
+  color: var(--cream);
+}
+
+.wedding-practical-row p,
+.wedding-practical-copy .lede {
+  color: rgba(232, 226, 217, 0.72);
+}
+
+.wedding-practical-row p {
+  max-width: 660px;
+  font-size: clamp(0.94rem, 1.35vw, 1.12rem);
+  line-height: 1.7;
+}
+
+.wedding-practical-copy {
+  align-content: center;
+}
+
+.wedding-practical-copy .eyebrow {
+  color: var(--gold-light);
+}
+
+.wedding-practical-copy .button.secondary {
+  color: var(--cream);
+  border-color: rgba(201, 168, 76, 0.48);
+}
+
+.wedding-practical-copy .button.secondary:hover {
+  border-color: var(--gold-light);
+  background: var(--gold-light);
+  color: var(--ink);
+}
+
+.wedding-flow-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(30px, 5vw, 78px);
+  align-items: stretch;
+}
+
+.wedding-flow-intro {
+  align-content: center;
+}
+
+.wedding-flow-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.wedding-flow-card {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+  min-height: 340px;
+  padding: clamp(28px, 3.2vw, 44px);
+  background:
+    linear-gradient(145deg, rgba(154, 124, 63, 0.06), rgba(255, 255, 255, 0)),
+    var(--page);
+}
+
+.wedding-flow-card h3 {
+  max-width: 12ch;
+}
+
+.wedding-flow-card p {
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.82;
+}
+
+.wedding-flow-card a {
+  align-self: end;
+  color: var(--gold);
+  font-size: 0.58rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  line-height: 1.6;
+  text-decoration: underline;
+  text-decoration-color: rgba(154, 124, 63, 0.2);
+  text-underline-offset: 0.14em;
+  text-transform: uppercase;
+}
+
+.wedding-feature-grid,
+.wedding-stat-grid {
+  display: grid;
+  gap: 1px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.wedding-feature-grid {
+  grid-template-columns: minmax(0, 1.25fr) repeat(2, minmax(0, 0.88fr));
+}
+
+.wedding-stat-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.wedding-feature-card,
+.wedding-stat-card {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+  min-height: 270px;
+  padding: clamp(28px, 3.4vw, 48px);
+  background: var(--page);
+}
+
+.wedding-feature-card:first-child {
+  align-content: end;
+  min-height: 360px;
+  background:
+    linear-gradient(to top, rgba(28, 24, 20, 0.72), rgba(28, 24, 20, 0.08)),
+    var(--feature-image, url("/assets/img/optimized/venue-table-setting.webp")) center/cover;
+  color: var(--white);
+}
+
+.wedding-feature-card:first-child h3,
+.wedding-feature-card:first-child p {
+  color: inherit;
+}
+
+.wedding-feature-card:first-child h3 {
+  max-width: 10ch;
+  font-size: clamp(1.7rem, 2.4vw, 2.45rem);
+}
+
+.wedding-feature-card p,
+.wedding-stat-card p {
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.8;
+}
+
+.wedding-stat-card {
+  grid-template-rows: auto auto 1fr;
+}
+
+.wedding-stat-card strong {
+  margin-bottom: 18px;
+}
+
+.wedding-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+  gap: clamp(28px, 5vw, 76px);
+  align-items: stretch;
+}
+
+.wedding-showcase-card {
+  display: grid;
+  align-content: center;
+  gap: 18px;
+  padding: clamp(34px, 5vw, 68px);
+  border: 1px solid var(--line);
+  background: var(--page);
+}
+
+.wedding-showcase-media {
+  min-height: clamp(360px, 36vw, 560px);
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(to top, rgba(28, 24, 20, 0.28), rgba(28, 24, 20, 0.02)),
+    var(--showcase-image, url("/assets/img/optimized/venue-card-season-quayside.webp")) center/cover;
+}
+
+.wedding-menu-mosaic {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: minmax(190px, auto);
+  gap: 10px;
+}
+
+.wedding-menu-tile {
+  display: grid;
+  align-content: end;
+  gap: 14px;
+  min-height: 230px;
+  padding: clamp(28px, 3.2vw, 44px);
+  border: 1px solid var(--line);
+  background: var(--page);
+}
+
+.wedding-menu-image {
+  grid-column: span 2;
+  grid-row: span 2;
+  min-height: 420px;
+  background:
+    linear-gradient(to top, rgba(28, 24, 20, 0.28), rgba(28, 24, 20, 0.02)),
+    var(--menu-tile-image, url("/assets/img/optimized/menu-card-conventional.webp")) center/cover;
+}
+
+.wedding-menu-tile-feature {
+  min-height: 230px;
+}
+
+.wedding-menu-tile h3 {
+  max-width: 13ch;
+}
+
+.wedding-menu-tile p {
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.78;
+}
+
+.wedding-menu-tile a {
+  color: var(--gold);
+  font-size: 0.58rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  line-height: 1.6;
+  text-decoration: underline;
+  text-decoration-color: rgba(154, 124, 63, 0.2);
+  text-underline-offset: 0.14em;
+  text-transform: uppercase;
+}
+
+.wedding-offset-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.88fr);
+  gap: 0;
+  align-items: center;
+}
+
+.wedding-offset-layout.reverse {
+  grid-template-columns: minmax(320px, 0.88fr) minmax(0, 1.12fr);
+}
+
+.wedding-offset-media {
+  min-height: clamp(440px, 44vw, 660px);
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(to top, rgba(28, 24, 20, 0.26), rgba(28, 24, 20, 0.02)),
+    var(--offset-image, url("/assets/img/optimized/food-cocktail-dessert.webp")) center/cover;
+}
+
+.wedding-offset-panel {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 18px;
+  margin-left: clamp(-92px, -5vw, -46px);
+  padding: clamp(34px, 5vw, 66px);
+  border: 1px solid var(--line);
+  background: rgba(250, 248, 245, 0.96);
+  box-shadow: 0 28px 80px rgba(28, 24, 20, 0.08);
+}
+
+.wedding-offset-layout.reverse .wedding-offset-panel {
+  margin-left: 0;
+  margin-right: clamp(-92px, -5vw, -46px);
+}
+
+.wedding-room-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 2.4vw, 32px);
+}
+
+.wedding-room-card {
+  display: grid;
+  gap: clamp(22px, 3vw, 38px);
+  align-content: start;
+  padding: clamp(28px, 4vw, 52px);
+  border: 1px solid var(--line);
+  background: var(--page);
+}
+
+.wedding-room-media {
+  min-height: clamp(300px, 28vw, 480px);
+  background:
+    linear-gradient(to top, rgba(28, 24, 20, 0.28), rgba(28, 24, 20, 0.02)),
+    var(--room-image, url("/assets/img/optimized/venue-dining-room.webp")) center/cover;
+}
+
+.wedding-tour-section {
+  background: var(--page);
+}
+
+.wedding-tour-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
+  gap: clamp(30px, 5vw, 80px);
+  align-items: center;
+}
+
+.wedding-tour-copy {
+  align-content: center;
+}
+
+.wedding-tour-links {
+  display: grid;
+  gap: 1px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.wedding-tour-link {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: clamp(18px, 3vw, 42px);
+  align-items: center;
+  min-height: 118px;
+  padding: clamp(24px, 3.2vw, 42px);
+  background: var(--surface);
+  color: inherit;
+  text-decoration: none;
+}
+
+.wedding-tour-link span {
+  color: #e6dfd5;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  line-height: 1;
+}
+
+.wedding-tour-link strong {
+  color: var(--ink);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.25rem, 2vw, 1.9rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.wedding-tour-link small {
+  color: var(--gold);
+  font-size: 0.58rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.wedding-tour-link:hover {
+  background: var(--cream);
+}
+
+.wedding-cta-slab {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(28, 24, 20, 0.88), rgba(28, 24, 20, 0.88)),
+    var(--cta-image, url("/assets/img/optimized/venue-table-setting.webp")) center/cover;
+  color: var(--white);
+}
+
+.wedding-cta-slab::after {
+  content: "";
+  position: absolute;
+  right: min(5vw, 80px);
+  bottom: -80px;
+  width: clamp(180px, 24vw, 360px);
+  height: clamp(180px, 24vw, 360px);
+  background: url("/assets/img/decoration-light.svg") center/contain no-repeat;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.wedding-cta-slab .section-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(26px, 5vw, 72px);
+  align-items: end;
+}
+
+.wedding-cta-slab h2,
+.wedding-cta-slab p {
+  color: inherit;
+}
+
+.wedding-cta-slab .lede {
+  color: rgba(255, 255, 255, 0.76);
+}
+
 .tasting-faq,
 .planning-faq {
   display: grid;
@@ -725,6 +1208,14 @@ p {
 
 .gallery-section.compact-gallery .gallery-grid {
   grid-template-rows: 300px;
+}
+
+.package-page .gallery-section.compact-gallery {
+  border-block: 10px solid var(--ink);
+}
+
+.package-page .gallery-section.compact-gallery .gallery-grid {
+  gap: 10px;
 }
 
 .gallery-grid {
@@ -1472,6 +1963,23 @@ textarea:focus {
   content: none;
 }
 
+.package-page .wire-section.save-date-band {
+  background:
+    linear-gradient(115deg, rgba(28, 24, 20, 0.76), rgba(28, 24, 20, 0.5)),
+    url("/assets/img/optimized/venue-table-setting.webp") center/cover;
+}
+
+.package-page .save-date-band::before {
+  inset: 0;
+  width: auto;
+  aspect-ratio: auto;
+  background:
+    linear-gradient(90deg, rgba(28, 24, 20, 0.56), rgba(28, 24, 20, 0.28)),
+    radial-gradient(circle at 84% 24%, rgba(201, 168, 76, 0.08), transparent 28vw);
+  opacity: 1;
+  transform: none;
+}
+
 .save-date-band .section-inner {
   position: relative;
   z-index: 1;
@@ -1518,10 +2026,10 @@ textarea:focus {
 
 .save-date-form {
   padding: clamp(24px, 3vw, 34px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(244, 239, 234, 0.14);
   border-top: 2px solid var(--gold);
-  background: rgba(255, 255, 255, 0.035);
-  backdrop-filter: none;
+  background: rgba(28, 24, 20, 0.62);
+  backdrop-filter: blur(14px);
 }
 
 .save-date-form input,
@@ -1649,10 +2157,10 @@ button:disabled {
 
 .consent-field label {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-columns: 18px minmax(0, 1fr);
   align-items: start;
   justify-content: start;
-  gap: 10px;
+  gap: 8px;
   color: rgba(255, 255, 255, 0.68);
   font-size: 0.72rem;
   letter-spacing: 0.04em;
@@ -1666,6 +2174,13 @@ button:disabled {
   height: 18px;
   margin-top: 2px;
   accent-color: var(--gold);
+}
+
+.consent-field .consent-copy {
+  color: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
 }
 
 .consent-field a {
@@ -1893,8 +2408,8 @@ button:disabled {
 label {
   display: flex;
   align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
+  justify-content: flex-start;
+  gap: 4px;
   font-size: 0.58rem;
   font-weight: 500;
   letter-spacing: 0.25em;
@@ -1907,6 +2422,14 @@ label span {
   color: rgba(255, 255, 255, 0.28);
   font-size: 0.52rem;
   letter-spacing: 0.2em;
+}
+
+label .required-star {
+  color: var(--gold-light);
+  font-size: 1.08rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 0.9;
 }
 
 input,
@@ -2489,6 +3012,14 @@ textarea {
   .compact-form-grid,
   .booking-form-layout,
   .included-heading,
+  .wedding-editorial-layout,
+  .wedding-practical-layout,
+  .wedding-flow-layout,
+  .wedding-showcase,
+  .wedding-offset-layout,
+  .wedding-offset-layout.reverse,
+  .wedding-tour-layout,
+  .wedding-cta-slab .section-inner,
   .footer-grid {
     grid-template-columns: 1fr;
   }
@@ -2505,6 +3036,28 @@ textarea {
 
   .included-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .wedding-flow-cards,
+  .wedding-feature-grid,
+  .wedding-stat-grid,
+  .wedding-menu-mosaic,
+  .wedding-room-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .wedding-feature-card:first-child,
+  .wedding-menu-image {
+    grid-column: 1 / -1;
+  }
+
+  .wedding-practical-copy {
+    order: -1;
+  }
+
+  .wedding-offset-panel,
+  .wedding-offset-layout.reverse .wedding-offset-panel {
+    margin: -68px clamp(22px, 6vw, 48px) 0;
   }
 
   .menu-download-grid {
@@ -2852,8 +3405,55 @@ textarea {
   .gallery-grid,
   .placeholder-strip,
   .quick-proof-grid,
+  .wedding-flow-cards,
+  .wedding-feature-grid,
+  .wedding-stat-grid,
+  .wedding-menu-mosaic,
+  .wedding-room-grid,
+  .wedding-editorial-row,
+  .wedding-practical-row,
+  .wedding-tour-link,
   .hero-contact-details {
     grid-template-columns: 1fr;
+  }
+
+  .wedding-flow-card,
+  .wedding-feature-card,
+  .wedding-stat-card,
+  .wedding-menu-tile {
+    min-height: auto;
+  }
+
+  .wedding-menu-image {
+    min-height: 280px;
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .wedding-showcase-card {
+    padding: 28px 24px;
+  }
+
+  .wedding-tour-link {
+    gap: 12px;
+    min-height: auto;
+    padding: 24px;
+  }
+
+  .wedding-showcase-media,
+  .wedding-offset-media,
+  .wedding-room-media {
+    min-height: 270px;
+  }
+
+  .wedding-offset-panel,
+  .wedding-offset-layout.reverse .wedding-offset-panel {
+    margin: -44px 14px 0;
+    padding: 28px 24px;
+  }
+
+  .wedding-cta-slab .section-inner {
+    align-items: start;
   }
 
   .menu-download-grid,

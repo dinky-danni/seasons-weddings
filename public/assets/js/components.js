@@ -57,8 +57,8 @@ const saveDateTemplate = `
           <label>Website <input name="website" tabindex="-1" autocomplete="off"></label>
         </div>
         <div class="compact-form-grid">
-          <div class="field"><label for="save-name">Name</label><input id="save-name" name="name" autocomplete="name" required></div>
-          <div class="field"><label for="save-phone">Phone</label><input id="save-phone" name="phone" autocomplete="tel" required></div>
+          <div class="field"><label for="save-name">Name <span class="required-star">*</span></label><input id="save-name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="save-phone">Phone <span class="required-star">*</span></label><input id="save-phone" name="phone" autocomplete="tel" required></div>
           <div class="field"><label for="save-date">Wedding date</label><input id="save-date" name="wedding-date" type="date"></div>
           <div class="field"><button class="button" type="submit">Check my date</button></div>
         </div>
@@ -89,18 +89,18 @@ const bookingFormTemplate = `
           <label>Website <input name="website" tabindex="-1" autocomplete="off"></label>
         </div>
         <div class="form-grid">
-          <div class="field"><label for="booking-type">Type of enquiry <span>Essential</span></label><select id="booking-type" name="enquiry-type" required><option value="">Select an option</option><option>Catering</option><option>Wedding Packages</option><option>Venue viewing</option><option>Tasting</option><option>Menus</option><option>Not sure yet</option></select></div>
-          <div class="field"><label for="booking-date">Wedding date <span>If known</span></label><input id="booking-date" name="wedding-date" type="date"></div>
-          <div class="field"><label for="booking-name">Name <span>Essential</span></label><input id="booking-name" name="name" autocomplete="name" required></div>
-          <div class="field"><label for="booking-email">Email <span>Essential</span></label><input id="booking-email" name="email" type="email" autocomplete="email" required></div>
-          <div class="field"><label for="booking-phone">Phone <span>Essential</span></label><input id="booking-phone" name="phone" autocomplete="tel" required></div>
-          <div class="field"><label for="booking-venue-status">Venue status <span>Optional</span></label><select id="booking-venue-status" name="venue-status"><option value="">Select an option</option><option>Venue booked</option><option>Still looking</option><option>Interested in Season Quayside</option></select></div>
-          <div class="field"><label for="booking-venue">Venue / location <span>Optional</span></label><input id="booking-venue" name="venue-location"></div>
-          <div class="field"><label for="booking-guests">Guest numbers <span>Optional</span></label><input id="booking-guests" name="guest-numbers" placeholder="Day and evening guests"></div>
-          <div class="field"><label for="booking-menu">Menu interest <span>Optional</span></label><input id="booking-menu" name="menu-interest" placeholder="Plated, sharing, grazing, street food..."></div>
-          <div class="field"><label for="booking-tasting">Tasting interest <span>Optional</span></label><select id="booking-tasting" name="tasting-interest"><option value="">Select an option</option><option>Yes</option><option>No</option><option>Tell me more</option></select></div>
-          <div class="field full"><label for="booking-message">Tell us about your day <span>Optional</span></label><textarea id="booking-message" name="message"></textarea></div>
-          <div class="field full consent-field"><label><input name="consent" type="checkbox" value="yes" required> I agree that Seasons can use these details to respond to my wedding enquiry. See the <a href="/privacy-policy/">Privacy Policy</a>.</label></div>
+          <div class="field"><label for="booking-type">Type of enquiry <span class="required-star">*</span></label><select id="booking-type" name="enquiry-type" required><option value="">Select an option</option><option>Catering</option><option>Wedding Packages</option><option>Venue viewing</option><option>Tasting</option><option>Menus</option><option>Not sure yet</option></select></div>
+          <div class="field"><label for="booking-date">Wedding date</label><input id="booking-date" name="wedding-date" type="date"></div>
+          <div class="field"><label for="booking-name">Name <span class="required-star">*</span></label><input id="booking-name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="booking-email">Email <span class="required-star">*</span></label><input id="booking-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="booking-phone">Phone <span class="required-star">*</span></label><input id="booking-phone" name="phone" autocomplete="tel" required></div>
+          <div class="field"><label for="booking-venue-status">Venue status</label><select id="booking-venue-status" name="venue-status"><option value="">Select an option</option><option>Venue booked</option><option>Still looking</option><option>Interested in Season Quayside</option></select></div>
+          <div class="field"><label for="booking-venue">Venue / location</label><input id="booking-venue" name="venue-location"></div>
+          <div class="field"><label for="booking-guests">Guest numbers</label><input id="booking-guests" name="guest-numbers" placeholder="Day and evening guests"></div>
+          <div class="field"><label for="booking-menu">Menu interest</label><input id="booking-menu" name="menu-interest" placeholder="Plated, sharing, grazing, street food..."></div>
+          <div class="field"><label for="booking-tasting">Tasting interest</label><select id="booking-tasting" name="tasting-interest"><option value="">Select an option</option><option>Yes</option><option>No</option><option>Tell me more</option></select></div>
+          <div class="field full"><label for="booking-message">Tell us about your day</label><textarea id="booking-message" name="message"></textarea></div>
+          <div class="field full consent-field"><label><input name="consent" type="checkbox" value="yes" required><span class="consent-copy">I agree that Seasons can use these details to respond to my wedding enquiry. See the <a href="/privacy-policy/">Privacy Policy</a>.</span></label></div>
           <div class="field full form-turnstile"><div class="cf-turnstile"></div></div>
           <div class="field full"><button class="button" type="submit">Send wedding enquiry</button></div>
         </div>
